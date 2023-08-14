@@ -1,4 +1,5 @@
-﻿//-----------------------------------------------------------------------------------------------------
+﻿// using System.Diagnostics;
+//-----------------------------------------------------------------------------------------------------
 // Script controls whole gameplay, UI and all sounds
 //-----------------------------------------------------------------------------------------------------
 using System.Collections;
@@ -65,6 +66,7 @@ public class GameController : MonoBehaviour
     int remainingHints;
     Color backgroundColor;
     static Vector3 oldPointerPosition;
+    public int isTimeNow;
 
     //=====================================================================================================
     // Initialize
@@ -211,7 +213,8 @@ public class GameController : MonoBehaviour
 
                     if (winUI)
                         winUI.SetActive(true);
-
+                    //this
+                    isTimeNow = (int)elapsedTime;
                     PlayMusic(musicWin, false);
                     gameFinished = true;
                     break;
